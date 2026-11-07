@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://mvwvwn6wtw71"]
 
 [ext_resource type="Texture2D" uid="uid://c7xc1o8yvf3ox" path="res://assets/SPRITES/player/idle/player-idle-1.png" id="1_li8ys"]
+[ext_resource type="Script" uid="uid://vm07cf32n2xo" path="res://scripts/esquilo.gd" id="2_esquilo"]
 [ext_resource type="Texture2D" uid="uid://dpal52hnt7bj4" path="res://assets/SPRITES/player/idle/player-idle-2.png" id="2_sn4i4"]
 [ext_resource type="Texture2D" uid="uid://dxcofm4028eu1" path="res://assets/SPRITES/player/idle/player-idle-3.png" id="3_a0p3m"]
 [ext_resource type="Texture2D" uid="uid://fynql6bs45q1" path="res://assets/SPRITES/player/idle/player-idle-4.png" id="4_ancuq"]
@@ -95,7 +96,12 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_contact"]
+height = 22.0
+
 [node name="Esquilo" type="CharacterBody2D" unique_id=718519932]
+collision_layer = 4
+script = ExtResource("2_esquilo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=137191793]
 position = Vector2(0, 1)
@@ -107,3 +113,12 @@ sprite_frames = SubResource("SpriteFrames_ikrs5")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.62410724
+
+[node name="ContactArea" type="Area2D" parent="." unique_id=1007467711]
+position = Vector2(3, -6)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ContactArea" unique_id=673599917]
+position = Vector2(0, 9)
+shape = SubResource("CapsuleShape2D_contact")
