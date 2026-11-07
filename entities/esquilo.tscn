@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://mvwvwn6wtw71"]
+
+[ext_resource type="Texture2D" uid="uid://c7xc1o8yvf3ox" path="res://assets/SPRITES/player/idle/player-idle-1.png" id="1_li8ys"]
+[ext_resource type="Texture2D" uid="uid://dpal52hnt7bj4" path="res://assets/SPRITES/player/idle/player-idle-2.png" id="2_sn4i4"]
+[ext_resource type="Texture2D" uid="uid://dxcofm4028eu1" path="res://assets/SPRITES/player/idle/player-idle-3.png" id="3_a0p3m"]
+[ext_resource type="Texture2D" uid="uid://fynql6bs45q1" path="res://assets/SPRITES/player/idle/player-idle-4.png" id="4_ancuq"]
+[ext_resource type="Texture2D" uid="uid://2m2fabdo1cuc" path="res://assets/SPRITES/player/idle/player-idle-5.png" id="5_15x3s"]
+[ext_resource type="Texture2D" uid="uid://b532cvgqrnccb" path="res://assets/SPRITES/player/idle/player-idle-6.png" id="6_ie4lo"]
+[ext_resource type="Texture2D" uid="uid://2gifx5nfypfk" path="res://assets/SPRITES/player/idle/player-idle-7.png" id="7_5jv6f"]
+[ext_resource type="Texture2D" uid="uid://bax3ahwljroua" path="res://assets/SPRITES/player/idle/player-idle-8.png" id="8_03w1x"]
+[ext_resource type="Texture2D" uid="uid://wpafb08s5g04" path="res://assets/SPRITES/player/jump/player-jump-1.png" id="9_x2ixj"]
+[ext_resource type="Texture2D" uid="uid://cqcvbyuk2bljv" path="res://assets/SPRITES/player/jump/player-jump-2.png" id="10_283fu"]
+[ext_resource type="Texture2D" uid="uid://cyxrauhodyvdi" path="res://assets/SPRITES/player/jump/player-jump-3.png" id="11_6nqrs"]
+[ext_resource type="Texture2D" uid="uid://bsgd35ghnrjy3" path="res://assets/SPRITES/player/jump/player-jump-4.png" id="12_5gm25"]
+[ext_resource type="Texture2D" uid="uid://b560vpvr1p8s1" path="res://assets/SPRITES/player/run/player-run-1.png" id="13_66ciq"]
+[ext_resource type="Texture2D" uid="uid://1kyo61o6c5ut" path="res://assets/SPRITES/player/run/player-run-2.png" id="14_vpspg"]
+[ext_resource type="Texture2D" uid="uid://bpx8o4us07q0q" path="res://assets/SPRITES/player/run/player-run-3.png" id="15_x6hwy"]
+[ext_resource type="Texture2D" uid="uid://c7xxaano0ai3s" path="res://assets/SPRITES/player/run/player-run-4.png" id="16_75j7y"]
+[ext_resource type="Texture2D" uid="uid://cwx0fnxv3jru7" path="res://assets/SPRITES/player/run/player-run-5.png" id="17_w36pm"]
+[ext_resource type="Texture2D" uid="uid://dbirlgybj3s2g" path="res://assets/SPRITES/player/run/player-run-6.png" id="18_h5oqp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ikrs5"]
+radius = 8.0
+height = 24.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ikrs5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_li8ys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_sn4i4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a0p3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ancuq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_15x3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ie4lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5jv6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_03w1x")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_x2ixj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_283fu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6nqrs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5gm25")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_66ciq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_vpspg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_x6hwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_75j7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_w36pm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_h5oqp")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 10.0
+}]
+
+[node name="Esquilo" type="CharacterBody2D" unique_id=718519932]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=137191793]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_ikrs5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1258137200]
+position = Vector2(3, -6)
+sprite_frames = SubResource("SpriteFrames_ikrs5")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.62410724
