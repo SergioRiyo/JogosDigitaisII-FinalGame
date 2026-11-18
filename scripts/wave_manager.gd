@@ -3,7 +3,7 @@ extends Node2D
 const SQUIRREL_SCENE: PackedScene = preload("res://entities/esquilo.tscn")
 const ACORN_SCENE: PackedScene = preload("res://entities/acorn.tscn")
 
-@export var wave_sizes: Array[int] = [10, 10, 10]
+@export var wave_sizes: Array[int] = [3, 4, 5]
 @export var spawn_interval: float = 0.7
 @export var intermission_duration: float = 1.8
 @export var spawn_height: float = 0.0

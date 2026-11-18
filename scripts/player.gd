@@ -16,7 +16,7 @@ enum State {
 @export var sprint_speed: float = 100.0
 @export var jump_velocity: float = -250.0
 @export var gravity: float = 980.0
-@export var max_health: int = 20
+@export var max_health: int = 30
 @export var invulnerability_duration: float = 0.5
 
 @export var move_left_action: StringName = &"move_left"

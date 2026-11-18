@@ -479,8 +479,8 @@ offset_right = 56.0
 offset_bottom = 14.0
 theme_override_styles/background = SubResource("StyleBoxFlat_health_background")
 theme_override_styles/fill = SubResource("StyleBoxFlat_health_fill")
-max_value = 20.0
-value = 20.0
+max_value = 30.0
+value = 30.0
 show_percentage = false
 
 [node name="EndScreen" type="CenterContainer" parent="HUD"]

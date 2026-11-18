@@ -26,6 +26,5 @@ func _on_body_entered(body: Node2D) -> void:
 
 	_consumed = true
 	if body.is_in_group("player") and body.has_method("take_damage"):
-		var hit_damage := maxi(damage, int(body.get("max_health")))
-		body.call("take_damage", hit_damage, true)
+		body.call("take_damage", damage, true)
 	queue_free()
